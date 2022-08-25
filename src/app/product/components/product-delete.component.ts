@@ -5,7 +5,7 @@ import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-delete',
-  templateUrl: './product-delete.component.html'
+  templateUrl: './../templates/product-delete.component.html'
 })
 export class ProductDeleteComponent implements OnInit {
 

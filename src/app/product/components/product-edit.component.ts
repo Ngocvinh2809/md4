@@ -6,7 +6,7 @@ import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-edit',
-  templateUrl: './product-edit.component.html'
+  templateUrl: './../templates/product-edit.component.html'
 })
 export class ProductEditComponent implements OnInit {
   productForm!: FormGroup;

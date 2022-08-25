@@ -18,8 +18,8 @@
                         <td>{{ product.name }}</td>
                         <td>{{ product.price}}</td>
                         <td> 
-                            <a [routerLink]="['/edit',idx]" class="btn btn-primary">Edit</a> &nbsp;&nbsp;
-                            <a [routerLink]="['/delete',idx]" class="btn btn-danger">Delete</a> 
+                            <a [routerLink]="['edit',idx]" class="btn btn-primary">Edit</a> &nbsp;&nbsp;
+                            <a [routerLink]="['delete',idx]" class="btn btn-danger">Delete</a> 
                         </td>
                     </tr>
                 </tbody>
