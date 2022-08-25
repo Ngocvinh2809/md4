@@ -1,0 +1,38 @@
+<div class="container">
+<img [src]="image" alt="">/
+<h4>hello {{name}}</h4>
+<input [(ngModel)]="name">
+
+<h4> bạn {{age}} tuổi</h4>
+<button (click)="tangtuoi()">Tăng Tuổi</button><br><br>
+<button (click)="giamtuoi()">Giảm Tuổi</button>
+
+<br>
+<br>
+<span *ngIf="age < 18;then condition1 ; else condition2"></span>
+<br>
+<ng-template #condition1>
+    bạn dưới 18 tuổi
+</ng-template>
+<ng-template #condition2>
+    bạn bằng hoặc trên 18 tuổi
+</ng-template>
+<!-- <span *ngIf="age < 18">bạn dưới 18 tuổi</span>
+<!-- <br> -->
+<!-- <span *ngIf="age >= 18">bạn trên 18 tuổi</span> -->
+<br>
+ Danh sách xe :
+<br>
+<div *ngFor="let car of cars">
+    <li>{{car}}</li>
+</div>
+
+<div >
+    <select name="" id="">
+        <option *ngFor="let car of cars">
+            {{car}}
+        </option>
+    </select>
+</div>
+<hr>
+</div>

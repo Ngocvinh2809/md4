@@ -1,0 +1,95 @@
+<div class="container">
+  <form action="" (ngSubmit)="handleSubmit(myForm.value)" #myForm="ngForm">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <h1 class="text-center">Đăng Ký</h1>
+        <!-- name -->
+        <div class="form-group">
+          <label for="name">Tên</label>
+          <input type="text" name="name" #name="ngModel" class="form-control" id="name"required minlength="3" ngModel />
+        <p *ngIf="name.invalid && (name.dirty || name.touched) && name.errors?.['required']" class="help-block text-danger">
+          Phải nhập tên
+        </p>
+        <p *ngIf="name.invalid && (name.dirty || name.touched) && name.errors?.['minlength']"class="help-block text-danger" >
+          Tên quá ngắn
+        </p>
+        </div>
+        <!-- mật khẩu -->
+        <div class="form-group">
+          <label for="Password">Mật Khẩu</label>
+          <input ngModel #password="ngModel" required minlength="3" type="text" class="form-control" name="password" />
+          <!-- Show validate -->
+          <p *ngIf="password.invalid && (password.dirty || password.touched) && password.errors?.['required']"
+            class="help-block text-danger">
+            Phải nhập mật khẩu
+          </p>
+
+          <p *ngIf="password.invalid && (password.dirty || password.touched) && password.errors?.['minlength']"
+            class="help-block text-danger" >
+            Mật khẩu quá ngắn
+          </p>
+        </div>
+        <!-- nhập lại mật khẩu -->
+        <div class="form-group">
+          <label for="confirmPassword">Nhập Lại Mật Khẩu</label>
+          <input ngModel #confirmPassword="ngModel" required  minlength="3"  type="text" class="form-control" name="confirmPassword" />
+          <!-- Show validate -->
+          <!-- Show validate -->
+          <p *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors?.['required']"
+            class="help-block text-danger">Phải nhập mật khẩu
+          </p>
+
+          <p *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors?.['minlength']"
+            class="help-block text-danger">Mật khẩu quá ngắn
+          </p>
+          <p *ngIf="">Mật Khẩu Không Trùng Khớp</p>
+        </div>
+        <!-- tuổi -->
+        <div class="form-group">
+            <label for="age">Tuổi</label>
+            <input type="number" name="age" #age="ngModel" class="form-control" id="age"required min="18" ngModel />
+          <p *ngIf="age.invalid && (age.dirty || age.touched) && age.errors?.['required']" class="help-block text-danger">
+            Phải nhập tuổi
+          </p>
+          <p *ngIf="age.invalid && (age.dirty || age.touched) && age.errors?.['min']"class="help-block text-danger" >
+            Bạn chưa đủ tuổi để đăng ký !
+          </p>
+          </div>
+        <!-- số điện thoại -->
+        <div class="form-group">
+            <label for="phone">Số Điện Thoại</label>
+            <input type="text" name="phone" #phone="ngModel" class="form-control" id="phone" required minlength="10" ngModel />
+          
+          <p *ngIf="phone.invalid && (phone.dirty || phone.touched) && phone.errors?.['required']" class="help-block text-danger">
+            Phải nhập Số Điện Thoại
+          </p>
+  
+          <p *ngIf="phone.invalid && (phone.dirty || phone.touched) && phone.errors?.['minlength']"class="help-block text-danger" >
+            Số điện thoại quá ngắn
+          </p>
+        </div>
+        <!-- quốc gia -->
+        <div class="form-group">
+            <label for="country">Quốc Gia : </label>
+            &nbsp;
+            <select name="country"  >
+              <option *ngFor="let country of countrys" [value]="country">{{country}}</option>
+            </select>
+          </div>
+         <!-- giới tính -->
+        <div class="form-group">
+            <label for="Gender">Giới Tính :&nbsp;</label>
+            &nbsp;
+            <select name="" id="">
+              <option *ngFor="let gender of genders">{{gender}}</option>
+            </select>
+        </div>
+        <hr />
+        <button type="submit" class="btn btn-primary" [disabled]="!myForm.form.valid" > submit</button>
+        <br><br><br><br><br><br><br>
+      </div>
+      <div class="col-4"></div>
+    </div>
+  </form>
+</div>
