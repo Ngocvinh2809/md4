@@ -12,7 +12,7 @@ export class GameComponent implements OnInit {
   public numbers: number[] = [];
   public timeleft: number = 0;
   public timeStart: any = false;
-  public maxTime: number = 350;
+  public maxTime: number = 500;
   show: boolean = true;
   constructor() {}
 
@@ -86,7 +86,7 @@ export class GameComponent implements OnInit {
     if (number == this.next) {
       this.next++;
       this.point++;
-      // this.numbers = this.shuffle(this.numbers);
+      this.numbers = this.shuffle(this.numbers);
       if (this.point == 100) {
         this.win();
       }
