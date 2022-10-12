@@ -1,2 +1,4 @@
 <p>about works!</p>
-<p>{{a| date:'fullDate'}}</p>
+<p>{{a| date:format| uppercase}}</p>
+<p>The hero's birthday is {{ birthday | date:format | uppercase}}</p>
+  <button (click)="toggleFormat()">Toggle Format</button>
