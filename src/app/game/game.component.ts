@@ -74,13 +74,16 @@ export class GameComponent implements OnInit {
     }
   }
   public resetGame() {
-    alert(`Game Over ${this.point}`);
-    this.isPlayingGame = false;
+    let a = confirm(`Game Over ${this.point}`);
+    if (a) {
+       this.isPlayingGame = false;
     this.next = 1;
     this.point = 0;
     this.timeleft = this.maxTime;
     clearInterval(this.timeStart);
     this.timeStart = null;
+    }
+   
   }
   play(number: number): void {
     if (number == this.next) {
