@@ -31,11 +31,11 @@ export class ProductDeleteComponent implements OnInit {
   handleYes(){
     this._ProductService.destroy(this.id);
     //redirect to list
-    this._Router.navigate(['/']);
+    this._Router.navigate(['/product']);
   }
   handleNo(){
     //redirect to list
-    this._Router.navigate(['/']);
+    this._Router.navigate(['/product']);
   }
 
 

@@ -5,8 +5,7 @@ import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-book-delete',
-  templateUrl: './book-delete.component.html',
-  styleUrls: ['./book-delete.component.css']
+  templateUrl: './../templates/book-delete.component.html',
 })
 export class BookDeleteComponent implements OnInit {
   id: any = 0;

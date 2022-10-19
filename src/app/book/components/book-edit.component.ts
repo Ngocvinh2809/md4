@@ -6,8 +6,7 @@ import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-book-edit',
-  templateUrl: './book-edit.component.html',
-  styleUrls: ['./book-edit.component.css']
+  templateUrl: './../templates/book-edit.component.html',
 })
 export class BookEditComponent implements OnInit {
   bookForm!: FormGroup;
@@ -38,10 +37,10 @@ export class BookEditComponent implements OnInit {
     }
     this._BookService.update(this.id,BookData).subscribe(book => {
       alert('sửa thành công');
+      //chuyen huong ve list
       this._Router.navigate(['/book']);
       });;
 
-    //chuyen huong ve list
 
 }
 

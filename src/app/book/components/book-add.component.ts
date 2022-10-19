@@ -6,8 +6,7 @@ import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-book-add',
-  templateUrl: './book-add.component.html',
-  styleUrls: ['./book-add.component.css'],
+  templateUrl: './../templates/book-add.component.html',
 })
 export class BookAddComponent implements OnInit {
   bookForm!: FormGroup;
