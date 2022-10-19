@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <form
+        [formGroup]="bookForm"
+        (ngSubmit)="handleSubmit()"
+        autocomplete="off"
+      >
+        <h3>Thêm Sách</h3>
+        <div class="form-group">
+          <label for="name">Tên Sách</label>
+          <input
+            formControlName="name"
+            type="text"
+            class="form-control"
+            name="name"
+          />
+          <!-- Show validate -->
+          <p
+            *ngIf="!bookForm.controls['name']?.valid && (bookForm.controls['name']?.dirty
+              ||bookForm.controls['name']?.touched) && bookForm.controls['name']?.errors?.['required']"
+            class="help-block text-danger"
+          >
+            Phải Nhập Tên Sách
+          </p>
+          <p
+            *ngIf="!bookForm.controls['name']?.valid && (bookForm.controls['name']?.dirty
+              ||bookForm.controls['name']?.touched) && bookForm.controls['name']?.errors?.['minlength']"
+            class="help-block text-danger"
+          >
+            Tên Sách Quá Ngắn
+          </p>
+        </div>
+        <div class="form-group">
+          <label for="price">Giá</label>
+          <input formControlName="price" type="text" class="form-control" />
+          <p
+            *ngIf="!bookForm.controls['price']?.valid && (bookForm.controls['price']?.dirty
+              ||bookForm.controls['price']?.touched) && bookForm.controls['price']?.errors?.['required']"
+            class="help-block text-danger"
+          >
+            Phải Nhập Giá
+          </p>
+          <p
+            *ngIf="!bookForm.controls['price']?.valid && (bookForm.controls['price']?.dirty
+              ||bookForm.controls['price']?.touched) && bookForm.controls['price']?.errors?.['minlength']"
+            class="help-block text-danger"
+          >
+            Số Giá Ít Hơn 3 Chữ Số
+          </p>
+        </div>
+        <div class="form-group">
+          <button
+            [disabled]="!bookForm.valid"
+            type="submit"
+            class="btn btn-primary"
+          >
+            Submit
+          </button>
+          &nbsp;
+          <a [routerLink]="['/']" class="btn btn-danger">Hủy</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

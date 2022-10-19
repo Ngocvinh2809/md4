@@ -1,4 +1,14 @@
 <p>about works!</p>
 <p>{{a| date:format| uppercase}}</p>
+<p>
+  <!-- {{ a |async}} -->
+</p>
 <p>The hero's birthday is {{ birthday | date:format | uppercase}}</p>
   <button (click)="toggleFormat()">Toggle Format</button>
+
+  <app-about1 [item]="currentItem" (ChaClick)="handleChaClick()" (newItemEvent)="addItem($event)"></app-about1>
+  <div>
+    <ul>
+      <li *ngFor="let item of items">{{item}}</li>
+    </ul>
+  </div>

@@ -24,41 +24,6 @@ export class GameComponent implements OnInit {
       this.numbers = this.shuffle(this.numbers);
     }
   }
-  public playGame() {
-    this.isPlayingGame = true;
-    // this.timeStart= true;
-  }
-  pauseGame() {
-    this.show = false;
-    setTimeout(() => {
-      var result = confirm('pauseGame');
-      if (result == true) {
-        this.show = true;
-      }
-    }, 100);
-    // this.timeStart= true;
-  }
-  public stopGame() {
-    // this.timeStart = null;
-    this.timeStart == false;
-    if (this.isPlayingGame == true) {
-      clearInterval(this.timeStart);
-      this.isPlayingGame = false;
-
-      if (this.timeStart == false) {
-        this.timeStart = setInterval(() => {
-          this.timeleft--;
-        }, 1000);
-      }
-    }
-
-    // this.resetGame();
-  }
-
-  win(): void {
-    alert('You win!');
-    this.resetGame();
-  }
   ngDoCheck(): void {
     if (this.isPlayingGame == true) {
       if (!this.timeStart) {
@@ -73,17 +38,45 @@ export class GameComponent implements OnInit {
       }
     }
   }
+  public playGame() {
+    this.isPlayingGame = true;
+  }
+  pauseGame() {
+    this.show = false;
+    setTimeout(() => {
+      var result = alert('pauseGame');
+      this.show = true;
+    }, 100);
+  }
+  // public stopGame() {
+  //   // this.timeStart = null;
+  //   this.timeStart == false;
+  //   if (this.isPlayingGame == true) {
+  //     clearInterval(this.timeStart);
+  //     this.isPlayingGame = false;
+
+  //     if (this.timeStart == false) {
+  //       this.timeStart = setInterval(() => {
+  //         this.timeleft--;
+  //       }, 1000);
+  //     }
+  //   }
+
+  //   // this.resetGame();
+  // }
+
+  win(): void {
+    alert('You win!');
+    this.resetGame();
+  }
   public resetGame() {
-    let a = confirm(`Game Over ${this.point}`);
-    if (a) {
-       this.isPlayingGame = false;
+    let a = alert(`Game Over ${this.point}`);
+    this.isPlayingGame = false;
     this.next = 1;
     this.point = 0;
     this.timeleft = this.maxTime;
     clearInterval(this.timeStart);
     this.timeStart = null;
-    }
-   
   }
   play(number: number): void {
     if (number == this.next) {

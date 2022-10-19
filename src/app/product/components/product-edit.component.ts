@@ -45,7 +45,7 @@ export class ProductEditComponent implements OnInit {
     this._ProductService.update(this.id,productData);
 
     //chuyen huong ve list
-    this._Router.navigate(['/']);
+    // this._Router.navigate(['/book']);
 
 }
 }

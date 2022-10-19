@@ -18,7 +18,7 @@
         <!-- mật khẩu -->
         <div class="form-group">
           <label for="Password">Mật Khẩu</label>
-          <input ngModel #password="ngModel" required minlength="3" type="text" class="form-control" name="password" />
+          <input ngModel #password="ngModel" required minlength="3" type="password" class="form-control" name="password" />
           <!-- Show validate -->
           <p *ngIf="password.invalid && (password.dirty || password.touched) && password.errors?.['required']"
             class="help-block text-danger">
@@ -33,7 +33,7 @@
         <!-- nhập lại mật khẩu -->
         <div class="form-group">
           <label for="confirmPassword">Nhập Lại Mật Khẩu</label>
-          <input ngModel #confirmPassword="ngModel" required  minlength="3"  type="text" class="form-control" name="confirmPassword" />
+          <input ngModel #confirmPassword="ngModel" required  minlength="3"  type="password" class="form-control" name="confirmPassword" />
           <!-- Show validate -->
           <!-- Show validate -->
           <p *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors?.['required']"
@@ -43,7 +43,7 @@
           <p *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors?.['minlength']"
             class="help-block text-danger">Mật khẩu quá ngắn
           </p>
-          <p *ngIf="">Mật Khẩu Không Trùng Khớp</p>
+          <p *ngIf="password.valid == confirmPassword.valid && ( confirmPassword.touched ||confirmPassword.dirty )" class="help-block text-danger">Mật Khẩu Không Trùng Khớp</p>
         </div>
         <!-- tuổi -->
         <div class="form-group">

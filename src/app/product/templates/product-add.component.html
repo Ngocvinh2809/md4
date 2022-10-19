@@ -2,7 +2,7 @@
     <div class="row">
       <div class="col-3"></div>
       <div class="col-6">
-        <form [formGroup]="productForm" (ngSubmit)="handleSubmit()">
+        <form [formGroup]="productForm" (ngSubmit)="handleSubmit()" autocomplete="off">
           <h3>Thêm Sản Phẩm</h3>
           <div class="form-group">
             <label for="name">Tên</label>
